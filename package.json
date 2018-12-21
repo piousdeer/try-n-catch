@@ -1,0 +1,31 @@
+{
+  "name": "try-n-catch",
+  "version": "1.0.0",
+  "description": "Functional `try...catch` wrapper",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "keywords": [
+    "typescript",
+    "try",
+    "catch",
+    "async",
+    "util"
+  ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/piousdeer/try-n-catch.git"
+  },
+  "author": "piousdeer",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^23.3.10",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.2.2"
+  }
+}
