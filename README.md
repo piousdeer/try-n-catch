@@ -67,6 +67,10 @@ const [err, res] = await tryAsync(() => fetch('https://github.com'))
 ```
 npm test
 ```
+## Lint
+```
+npm run lint
+```
 ## Build
 ```
 npm run build

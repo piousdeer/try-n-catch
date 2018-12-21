@@ -3,9 +3,16 @@
   "version": "1.0.0",
   "description": "Functional `try...catch` wrapper",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
+    "test": "jest",
+    "lint": "tslint -p tsconfig.json",
     "build": "tsc",
-    "test": "jest"
+    "prepublishOnly" : "npm test && npm run lint",
+    "prepare" : "npm run build"
   },
   "keywords": [
     "typescript",
