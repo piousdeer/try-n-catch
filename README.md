@@ -29,9 +29,7 @@ npm i try-n-catch
 ```
 
 ## Usage
-Two functions are exported: `trySync` and `tryAsync`.  
-`trySync` is exported as default. They both accept a function  
-as the first argument and its arguments as the subsequest ones.
+Two functions are exported: `trySync` and `tryAsync`. `trySync` is exported as default. They both accept a function as the first argument and its arguments as the subsequest ones.
 ```ts
 import tryCatch from 'try-n-catch'
 
