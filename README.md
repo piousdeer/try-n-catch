@@ -3,24 +3,24 @@ Functional `try...catch` wrapper written in TypeScript.
 
 ## Why
 ```js
-let res
+let val
 
 try {
-  res = someFunction()
-} catch {
-  return null
+  val = someFunction()
+} catch (err) {
+  console.error(`Sorry, there was an error: ${err}`)
 }
 
-res = "Oops! This isn't immutable!"
+val = "Oops! This isn't immutable!"
 ```
 ```js
-const [err, res] = tryCatch(someFunction)
+const [err, val] = tryCatch(someFunction)
 
 if (err) {
-  return null
+  console.error(`Sorry, there was an error: ${err}`)
 }
 
-res = "Let's try that again..." // TypeError: Assignment to constant variable
+val = "Let's try that again..." // TypeError: Assignment to constant variable
 ```
 
 ## Install
@@ -42,9 +42,9 @@ const [err, val] = tryCatch(feedWith, 'apples')
 // const [err, val] = tryCatch(() => feedWith('apples'))
 
 if (err) {
-  // handle the error
+  // handle the error. val is undefined
 } else {
-  // no error was thrown
+  // no error was thrown. val is the returned value
 }
 
 function feedWith (food: string) {
@@ -59,6 +59,10 @@ Use `tryAsync` on asynchronous functions.
 ```ts
 import { trySync, tryAsync } from 'try-n-catch'
 const [err, res] = await tryAsync(() => fetch('https://github.com'))
+```
+Don't care about the error?
+```ts
+const [, val] = tryCatch(someFunction)
 ```
 
 ## Test
