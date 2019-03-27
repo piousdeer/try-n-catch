@@ -65,10 +65,6 @@ Don't care about the error?
 const [, val] = tryCatch(someFunction)
 ```
 
-## Test
-```
-npm test
-```
 ## Lint
 ```
 npm run lint
