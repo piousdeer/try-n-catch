@@ -1,15 +1,16 @@
 {
   "name": "try-n-catch",
   "version": "1.0.1",
-  "description": "Functional `try...catch` wrapper",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist/**/*"
-  ],
-  "scripts": {
-    "build": "tsc",
-    "prepare": "npm run build"
+  "description": "Functional try-catch wrapper",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "@pika/pack": {
+    "pipeline": [
+      ["@pika/plugin-standard-pkg"],
+      ["@pika/plugin-build-node"],
+      ["@pika/plugin-build-web"],
+      ["@pika/plugin-build-types"]
+    ]
   },
   "keywords": [
     "typescript",
@@ -25,6 +26,11 @@
   "author": "piousdeer",
   "license": "ISC",
   "devDependencies": {
+    "@pika/pack": "^0.3.6",
+    "@pika/plugin-build-node": "^0.3.14",
+    "@pika/plugin-build-types": "^0.3.14",
+    "@pika/plugin-build-web": "^0.3.14",
+    "@pika/plugin-standard-pkg": "^0.3.14",
     "typescript": "^3.2.2"
   }
 }
