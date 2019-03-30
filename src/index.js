@@ -1,26 +1,42 @@
-export function trySync (func, ...args) {
-  let error, value
+const handle = (value, threw) => {
+  return threw
+    ? new TryArray(undefined, value, true)
+    : new TryArray(value, undefined, false)
+}
 
-  try {
-    value = func(...args)
-  } catch (err) {
-    error = err
+class TryArray extends Array {
+  get value () {
+    return this[0]
   }
 
-  return [error, value]
+  get error () {
+    return this[1]
+  }
+
+  get threw () {
+    return this[2]
+  }
+}
+
+export function trySync (func, ...args) {
+  try {
+    return handle(func(...args), false)
+  } catch (error) {
+    return handle(error, true)
+  }
 }
 
 export async function tryAsync (func, ...args) {
-  let error, value
-
   try {
-    value = await func(...args)
-  } catch (err) {
-    error = err
+    return handle(await func(...args), false)
+  } catch (error) {
+    return handle(error, true)
   }
-
-  return [error, value]
 }
 
 const tryCatch = trySync.bind(null)
+
+tryCatch.sync = trySync
+tryCatch.async = tryAsync
+
 export default tryCatch
