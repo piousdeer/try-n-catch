@@ -8,7 +8,7 @@ interface TryCatcherSync {
 }
 
 interface TryCatcherAsync {
-  <Args, Returned>(func: (...args: Args[]) => Returned, ...args: Args[]): Promise<TryArray<Returned>>
+  <Args, Returned>(func: (...args: Args[]) => Promise<Returned>, ...args: Args[]): Promise<TryArray<Returned>>
 }
 
 export declare const trySync: TryCatcherSync
