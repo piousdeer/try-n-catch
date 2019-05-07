@@ -1,6 +1,6 @@
 {
   "name": "try-n-catch",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Functional try-catch wrapper",
   "main": "src/index.js",
   "types": "src/index.d.ts",
