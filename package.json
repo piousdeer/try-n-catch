@@ -6,18 +6,10 @@
   "types": "src/index.d.ts",
   "@pika/pack": {
     "pipeline": [
-      [
-        "@pika/plugin-standard-pkg"
-      ],
-      [
-        "@pika/plugin-build-node"
-      ],
-      [
-        "@pika/plugin-build-web"
-      ],
-      [
-        "@pika/plugin-build-types"
-      ]
+      ["@pika/plugin-standard-pkg"],
+      ["@pika/plugin-build-node"],
+      ["@pika/plugin-build-web"],
+      ["@pika/plugin-build-types"]
     ]
   },
   "keywords": [
@@ -34,11 +26,11 @@
   "author": "piousdeer",
   "license": "ISC",
   "devDependencies": {
-    "@pika/pack": "^0.3.6",
-    "@pika/plugin-build-node": "^0.3.14",
-    "@pika/plugin-build-types": "^0.3.14",
-    "@pika/plugin-build-web": "^0.3.14",
-    "@pika/plugin-standard-pkg": "^0.3.14",
-    "typescript": "^3.2.2"
+    "@pika/pack": "^0.3.7",
+    "@pika/plugin-build-node": "^0.3.16",
+    "@pika/plugin-build-types": "^0.3.16",
+    "@pika/plugin-build-web": "^0.3.16",
+    "@pika/plugin-standard-pkg": "^0.3.16",
+    "typescript": "^3.4.5"
   }
 }
